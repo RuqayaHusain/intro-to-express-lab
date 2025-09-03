@@ -26,10 +26,6 @@ const getRandomNumber = (max) => {
     return Math.floor(Math.random() * (max + 1));
 }
 
-app.listen(PORT, () => {
-    console.log(`Listining on port: ${PORT}`);
-});
-
 app.get('/greetings/:userName', (req, res) => {
     res.send(`<h1>Hello there, ${req.params.userName}!</h1>`);
 });
@@ -74,4 +70,8 @@ app.get('/shoes', (req, res) => {
     }
 
     res.send(filteredShoes);
+});
+
+app.listen(PORT, () => {
+    console.log(`Listining on port: ${PORT}`);
 });
